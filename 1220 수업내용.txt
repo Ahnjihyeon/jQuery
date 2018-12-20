@@ -1,0 +1,20 @@
+ch06-05
+on의 반대는 off
+bind의 반대는 unbind
+
+.bind('click') = .toggle
+toggle이 click이나 마찬가지 이다.
+
+이벤트 타겟이 있을 때는 이벤트가 있어야 한다.
+
+jQuery 내 toggle 기능은 최신 버전에서 사라졌다.
+버전 체크 필요
+
+06_01~07 종합이벤트 ; 다른 것을 엮을 수 있는, 이벤트의 종류를 여러개 엮을 수 있다.
+06_08~ 독립이벤트 ; 이벤트를 단독으로 하나만 사용할 수 있다.
+
+show, slide를 하려면  display가 none이어야한다.
+숨기려면 display 상태여야 한다.
+<style>
+span{ display:none}
+</style>

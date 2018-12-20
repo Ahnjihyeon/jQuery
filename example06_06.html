@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>클릭할 때마다 서로 다른 동작함수 호출하기</title>
+<style type="text/css">
+img{ 
+   width: 200px; height: 250px;		
+}
+div{
+    width: 100px; height: 100px; background:navy;
+}
+</style>
+<script src="https://code.jquery.com/jquery-1.8.0.js"></script>
+<script>
+$(function(){
+    //div 요소를 1회 클릭 시 배경색은 빨강, 폭은 400
+    //2회 클릭 시 배경색은 파랑, 폭은 200
+    //3회 클릭 시 배경색은 초록, 폭은 300,
+    //4회 클릭 시 배경색은 노랑, 폭은 250
+    //다시 5회 클릭 시 1회 클릭한 것과 같이되고, 6회 클릭 시 2회 클릭한 것과 같이 변함
+    // 매번 이 기능을 반복되게 구현
+    $('div').toggle(
+        function(event){$(event.target).css("background","red").width(400);},
+        function(event){$(event.target).css("background","blue").width(200);},
+        function(event){$(event.target).css("background","green").width(300);},
+        function(event){$(event.target).css("background","yellow").width(250);}
+        
+        
+    );
+    
+    
+});
+</script>
+</head>
+<body>
+	<img src="./images/image3.jpg">
+	<div></div>
+</body>
+</html>
