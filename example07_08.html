@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>사용자 효과</title>
+<style>
+#region { 
+  position: relative; width: 792px; height:877px;
+  overflow:hidden;  margin:auto;
+}
+#images{
+  width: 1600px; height: auto;
+}
+#images a {display:block; width:792px; float:left; }
+#images a img { 
+  width:792px; height:877px; 
+  border:0; position: relative;}
+#direction {
+  width: 360px;  margin:auto;
+}
+.leftbtn{margin-top:10px;}
+.rightbtn{margin-left:290px;margin-top:10px;}
+</style>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<script>
+$(function(){
+    var wd = $("#region").width();
+    console.log(wd);
+    var len = $("#images a").length;
+    console.log(wd, len);
+    $("#images").width(wd*len);
+  $(".rightbtn").click(function(){
+    $("#images").animate({"margin-left":"-="+wd+"px"},500)
+  });
+  $(".leftbtn").click(function(){
+    $("#images").animate({"margin-left":"+="+wd+"px"},500)
+  });
+});
+</script>
+</head>
+<body>
+	<div id="region">
+		<div id="images">
+			<a href="#"><img src="./OITNB-1.jpg"/></a> 
+			<a href="#"><img src="./OITNB-3.jpg"/></a>
+			<a href="#"><img src="./OITNB-2.jpg"/></a>
+			<a href="#"><img src="./discovery.jpg"/></a>
+			<a href="#"><img src="./discovery-1.jpg"/></a>
+		</div>
+	</div>
+	<div id="direction">
+		<button class="leftbtn">&laquo;</button>
+		<button class="rightbtn">&raquo;</button>
+	</div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+1227 수업 내용 ; 슬라이드 효과
+
+animatie 문법
+중괄호가 들어갈 때는 세미콜론이 아니라 콜론으로 한다.
+.animate({animation을 할 속성과 값}, animation 시간)
+
+margin-left의 값을 계산해서 넣도록 할 수 있다.
+var wd = $("#region").width();
+console.log(wd);
+
+~~~~~ {"margin-left":"-"+wd+"px"}
+
+이미지의 개수를 세어주는 계산
+var len = $("images a").length;
+console.log(wd, len);
+
+FYI 
+console.log() is a JavaScript method for displaying data to the console. It's not exclusive to jQuery. If you open up Chrome dev tools, or your browser equivalent, you'll see this box near the bottom that you can type into. That's the console.
+console.log ()는 콘솔에 데이터를 표시하는 JavaScript 메서드입니다. jQuery에만 국한된 것은 아닙니다. Chrome 개발자 도구 또는 해당 브라우저를 열면이 상자가 입력 할 수있는 하단 근처에 표시됩니다. 그것은 콘솔입니다.
+
+images통의 width를 이미지 개수에 따라 세팅
+$("images").width(wd*len);
+
+n=n+1
+n+=1
+n=n-1
+n-=1
+"-="+wd+"px"
+"+="+wd+"px"
+
+#images의 왼쪽 마진값이 -4*wd보다 작을 경우, 0보다 클 경우 stop하도록 제한을 걸어야한다.
+ => #images의 왼쪽 마진값이 0보다 작을 경우, -800보다 클 경우 실행되도록 제한을 걸어야한다.
+ var maxLength = wd*(len-1)*-1;
+ var aniLen;
+
+ aniLen = parseInt($("#images").css("margin-left"));     // aniLens을 margin-left의 값을 숫자로 불러와서 지정
+ if(aniLen>maxLength){ ~~~ }                      // aniLen이 maxLength보다 클 경우 동작을 시켜라
+ if(aniLen<0){ ~~~ }                      // aniLen이 0보다 작을 경우 동작을 시켜라
+
+not(":animated") => animation이 동작중일 때에는 실행되지 않음. 연속 클릭으로 인한 오류 방지
+
+마지막 이미지 다음에 첫번째 이미지가 오게 하는 것
+else {~~~}
+
+
+자동으로 넘어가게 하기
+var intv=setInterval(function(){rightMovie();},3000);  Interval(주기)를 세팅하는 것
+
+자동으로 넘어가는 중 클릭하면 넘어가게 하기
+  clearInterval(intv); // Interval을 메모리에서 지운다.
+  rightMovie(); // 그 후 rightMovie를 실행하게 한다.
+  intv=setInterval(function(){rightMovie();},3000);  // 클릭 후 자동으로 넘어가는 것을 다시 실행한다.
+
+자동으로 안넘어가게 하는 stop button 추가하기
+stop / play 를 switch 기능으로 넣어주기.
+대전에 있는 글로벌급 웹에이전시 10 곳,
+FoxM
+엑시코브라운(?)
++ 소소한 곳 40곳 있음.
+
+
+회사에서 최소 6개월 이상 일해야 한국소프트웨어진흥원에 등록됨.
+ - 관공서 외주 받을 때, 인적 사항 입력 시 경력/자격증 등이 입력됨. 조건이 좋을수록 돈이 올라감.
+ - 컴공이 아니라면, 정보처리기사 자격증이 있어야 함 (+웹디자인기능사)
+
+
+
+css에서 position 이 absolute일 경우에는 margin-left가 아니라 left, top, right로 지정해줘야한다
