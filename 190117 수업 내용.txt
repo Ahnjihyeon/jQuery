@@ -1,0 +1,15 @@
+https://api.jquery.com/ 에서 필요한 UI 검색, 다운로드 해서 활용
+
+CSS가 다 되어있는 프레임워크, 태그랑 선택자만 수정해서 쓰면 된다.
+Bootstrap, bulma, pure, Foundation, skeleton, ...
+
+자바스크립트 프레임워크
+jQuery, react, vue,...
+
+이것들을 쓸 수 있어야 프론트엔드 개발자
+
+5월에 김기태 부트 캠프 개강 예정
+
+
+jQuery 모바일
+https://jquerymobile.com/
